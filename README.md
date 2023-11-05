@@ -15,7 +15,7 @@
 
 # Day 2: URLs and Views
 
-URL: https://github.com/duong2604/CNC2-Django-Python
+URL: https://github.com/duong2604/Teky_CN_C3_Django_HP9
 
 - Giao thức protocol: http, https, FTP
 - Domain: github.com
@@ -34,3 +34,7 @@ http://shopping.com -> Trang chủ shopping.com
 http://shopping.com/products -> Đi vào trang sản phẩm, hiển thị tất cả sản phẩm
 
 http://shopping.com/products/idProduct -> Trang chi tiết sản phẩm
+
+# Day 3: URls and Views - Phần 2
+
+- Dynamic segment:

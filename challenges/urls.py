@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('january', views.january)
+    # http://localhost:8000/challenges/january
+    path('<month>', views.monthly_challenges_by_string)
 ]
