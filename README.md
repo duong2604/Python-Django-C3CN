@@ -38,3 +38,16 @@ http://shopping.com/products/idProduct -> Trang chi tiết sản phẩm
 # Day 3: URls and Views - Phần 2
 
 - Dynamic segment:
+
+  Thường sử dụng để truyền động dữ liệu trên URL. Đây là một tính năng rất quan trọng trong Django
+  Trong file `challenges/urls.py`
+  urlpatterns = [
+  path('', views.index),
+  path('<int:month>', views.monthly_challenges_by_number),
+  path('<str:month>', views.monthly_challenges_by_string)
+  ]
+
+- Redirects:
+
+  HttpResponseRedirect('')
+  Dùng để điều hướng đến một path đã tồn tại. Tham số truyền vào là một đườn dẫn(path) muốn điều hướng đến
