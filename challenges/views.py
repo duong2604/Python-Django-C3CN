@@ -24,14 +24,15 @@ def index(request):
 
     list_item = ''
 
-    response_data = """
-        <ul>
-            <li><a href="/challenges/january">January</a></li>
-            <li><a href="/challenges/february">February</a></li>
-            <li><a href="/challenges/march">March</a></li>
-        </ul>
+    months = list(monthly_challenges.keys())
 
-    """
+    for month in months:
+        month_path = reverse("monthly", args=[month])
+        list_item += f"<li><a href=\"{month_path}\">{month}</a></li>"
+
+    # <li><a href="/challenges/january">january</a></li><li><a href="/challenges/february">february</a></li>
+
+    response_data = f"<ul>{list_item}</ul>"
 
     return HttpResponse(response_data)
 
