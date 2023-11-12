@@ -53,6 +53,6 @@ def monthly_challenges_by_number(request, month):
 def monthly_challenges_by_string(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return HttpResponse(challenge_text)
+        return render(request, "challenges/challenges.html", {})
     except:
         return HttpResponseNotFound('404 not found!')
