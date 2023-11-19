@@ -52,7 +52,7 @@ http://shopping.com/products/idProduct -> Trang chi tiết sản phẩm
   HttpResponseRedirect('')
   Dùng để điều hướng đến một path đã tồn tại. Tham số truyền vào là một đườn dẫn(path) muốn điều hướng đến
 
-## Day 4: Templates and Static files
+## Day 4: Templates and Static files (Phần 1)
 
 ### Templates
 
@@ -90,3 +90,29 @@ INSTALLED_APPS = [
 ]```
 
 ````
+
+## Day 5: Templates and Static files (Phần 2)
+
+- Truy cập templates/challenges.html
+
+```html
+<p>Username: {{username}}</p>
+<p>Age:{{age}}</p>
+```
+
+- views.py
+
+```py
+
+def index(request):
+
+    user = {
+        "name": "danny",
+        "age": 25
+    }
+
+    return render(request, "challenges.html", {
+        "username": user['name'],
+        "age": user['age']
+    })
+```
