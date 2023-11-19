@@ -51,3 +51,42 @@ http://shopping.com/products/idProduct -> Trang chi tiết sản phẩm
 
   HttpResponseRedirect('')
   Dùng để điều hướng đến một path đã tồn tại. Tham số truyền vào là một đườn dẫn(path) muốn điều hướng đến
+
+## Day 4: Templates and Static files
+
+### Templates
+
+- Truy cập challenges folder, khởi tạo "templates" folder
+- Trong "templates" folder, khởi tạo "index.html"
+- Trong views.py:
+
+```py
+def index(request):
+   return render(request, "index.html")
+
+```
+
+- urls.py
+
+```py
+path('', views.index)
+```
+
+- Truy cập vào mysite/setting.py
+  Note: Khai báo app , django sẽ tự động tìm kiếm template file trong các aplication con, điều này giúp chúng ta render được các file html.
+
+````py
+# Application definition
+
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "challenges"
+
+]```
+
+````
