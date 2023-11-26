@@ -22,14 +22,10 @@ monthly_challenges = {
 
 def index(request):
 
-    user = {
-        "name": "danny",
-        "age": 25
-    }
+    months = list(monthly_challenges.keys())
 
-    return render(request, "challenges.html", {
-        "username": user['name'],
-        "age": user['age']
+    return render(request, "index.html", {
+        'months': months
     })
 
 
@@ -47,17 +43,11 @@ def monthly_challenges_by_number(request, month):
 
 
 def monthly_challenges_by_string(request, month):
-    user = {
-        "name": "Danny",
-        "age": 25
-    }
 
     try:
         challenge_text = monthly_challenges[month]
         return render(request, "challenges.html", {
-            "text": challenge_text,
-            "username": user['name'],
-            "age": user["age"]
+            "challenge_text": challenge_text
         })
     except:
         return HttpResponseNotFound('404 not found!')
