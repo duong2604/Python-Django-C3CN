@@ -116,3 +116,71 @@ def index(request):
         "age": user['age']
     })
 ```
+
+## Day 6: Templates and Static files (Phần 3)
+
+`challenges/views.py`
+
+```py
+
+def index(request):
+
+    months = list(monthly_challenges.keys())
+
+    return render(request, "index.html", {
+        'months': months
+    })
+
+
+def monthly_challenges_by_string(request, month):
+
+    try:
+        challenge_text = monthly_challenges[month]
+        return render(request, "challenges.html", {
+            "challenge_text": challenge_text
+        })
+    except:
+        return HttpResponseNotFound('404 not found!')
+
+```
+
+`challenges/templates/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      {% for month in months %}
+      <li>
+        <a href="{% url 'monthly' month %}">{{month}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+```
+
+`challenges/templates/challenges.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This month</title>
+  </head>
+  <body>
+    <h1>This month challenge</h1>
+    <p>{{ challenge_text }}</p>
+  </body>
+</html>
+
+<!-- Django Template language DTL -->
+```
