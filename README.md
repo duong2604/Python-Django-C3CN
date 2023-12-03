@@ -184,3 +184,32 @@ def monthly_challenges_by_string(request, month):
 
 <!-- Django Template language DTL -->
 ```
+
+## Day 7: Templates and Static files (Phần 4)
+
+`Xử lý lỗi 404 not found khi request đến 1 path không tồn tại trên hệ thống`
+`mypage/templates/  tạo thêm 404.html file`
+
+```html
+<!DOCTYPE html>
+<html>
+  <title>Wrong address</title>
+  <body>
+    <h1>Ooops!</h1>
+
+    <h2>I cannot find the file you requested!</h2>
+  </body>
+</html>
+```
+
+`challenges/views.py`
+
+```py
+
+def monthly_challenges_by_string(request, month):
+
+    except:
+        # return HttpResponseNotFound('404 not found!')
+        raise Http404('404.html')
+
+```
