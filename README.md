@@ -222,3 +222,14 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 ```
+
+## Static Files
+
+` Mặc định django không hỗ trợ tìm kiếm các files css , images, js vì thế chúng ta cần khai báo như khai báo các templates.`
+
+`Trong file settings.py`
+
+```py
+    STATIC_URL = '/static/'
+```
+  
