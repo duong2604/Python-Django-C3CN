@@ -213,3 +213,12 @@ def monthly_challenges_by_string(request, month):
         raise Http404('404.html')
 
 ```
+
+`Để Django có thể trả về Page 404 cần cấu hình lại trong file settings.py`
+
+```py
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ["127.0.0.1"]
+```
