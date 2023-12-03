@@ -232,4 +232,20 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 ```py
     STATIC_URL = '/static/'
 ```
-  
+
+`challenges/  Khởi tạo folder "static" chứa các file css : challenges.css,...`
+
+
+`Để sử dụng static trên đàu mỗi file`
+```py
+  {% load static %}
+```
+`Django sẽ tự động tìm kiếm đế folder 'static' để lấy các file css, images,js...`
+
+`Để lấy link đến các static file mính sur dụng thẻ static của django`
+
+```py
+{% static 'css/styles.css'%}
+{% static 'js/script.js'%}
+{% static 'images/logo.png'%}
+```
