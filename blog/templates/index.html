@@ -16,9 +16,25 @@
 
 
 {% block content %}
-    <header>
-        <h1><a class="btn btn-success">My blog</a></h1>
+   
+    <main class="mx-5">
+        <header>
+            {% include "includes/header.html" %}
+        </header>
 
-        <ul>All blogs</ul>
-    </header>
+        <div class="banner">
+            banner
+        </div>
+        <div class="post__content">
+            Latest blog posts
+        </div>
+
+        
+        <footer>
+            {% include "includes/footer.html" %}
+        </footer>
+
+    </main>
+
+
 {% endblock content %}
