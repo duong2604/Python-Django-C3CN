@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    "blog",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,9 +57,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # BASE_DIR / 'challenges' / 'templates'
-            # os.path.join(BASE_DIR, "challenges", "templates")
-
             BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
