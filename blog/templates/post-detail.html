@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-{% load static %}
-
-{% block title %} My blog {% endblock title %} 
  
+{% load static %} 
+ 
+{% block title %} My blog  {% endblock title %} 
+
 {% block css_files %}
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -16,11 +17,9 @@
   crossorigin="anonymous"
 ></script>
 <link ref="stylesheet" href="{% static "css/index.css" %}"
-
-{% endblock css_files %} 
-
-
-{% block content %}
+ {% endblock css_files%} 
+ 
+ {% block content %}
 
 <main class="">
   <header>{% include "includes/header.html" %}</header>
@@ -30,18 +29,6 @@
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti.</p>
     <button class="btn">Explore</button>
   </div>
-  <section>
-    <h3 class="heading">Latest posts</h3>
-    <div class="post">
-      
-      {% include "includes/post.html" %}
-      {% include "includes/post.html" %}
-      {% include "includes/post.html" %}
-      
-    </div>
-  </section>
 
-  <footer>{% include "includes/footer.html" %}</footer>
+  <h2>post detail</h2>
 </main>
-
-{% endblock content %}

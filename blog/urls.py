@@ -6,3 +6,4 @@ urlpatterns = [
     path("posts", views.posts_page, name="posts_page"),
     path("posts/<slug>", views.post_detail, name="post_detail")
 ]
+# http: localhost:8000/

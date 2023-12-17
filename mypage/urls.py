@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # http:localhost:8000/blog/posts/my-first-post
-    path('blog/', include("blog.urls"))
+    path('', include("blog.urls"))
 ]
+#  http:localhost:8000
