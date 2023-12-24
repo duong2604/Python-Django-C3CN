@@ -42,20 +42,44 @@ posts = [
         """,
         "date": date(2021, 12, 4)
     },
+    {
+        "slug": "enjoy-food",
+        "author": "Danny Duong",
+        "title": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti",
+        "image": "post-3.jpg",
+        "content": """
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+        """,
+        "date": date(2019, 12, 8)
+    },
 ]
 
 
 def blog_page(request):
-    return render(request, "index.html")
+
+    data = sorted(posts, key=lambda x: x['date'])
+    latest_post = data[0:3]
+    return render(request, "index.html", {
+        "latest_post": latest_post
+    })
 
 
 def posts_page(request):
-    return HttpResponse("ALl Posts Page")
+    return render(request, "all-post.html", {
+        "posts": posts
+    })
 
 
 def post_detail(request, slug):
-    # detailed_post = posts[slug]
-    # return render(request, "post-detail.html", {
-    #     "post": detailed_post
-    # })
-    pass
+
+    # Lặp qua tất  các bài post
+    # Tìm bài post có slug === slug(truyền vào)
+    # Trả ra bai post render vè giao diện
+
+    post = [post for post in posts if post['slug'] == slug]
+
+    return render(request, "post-detail.html", {
+        "slug": slug
+    })

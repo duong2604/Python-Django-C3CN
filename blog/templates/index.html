@@ -15,7 +15,7 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
   crossorigin="anonymous"
 ></script>
-<link ref="stylesheet" href="{% static "css/index.css" %}"
+<link ref="stylesheet" href="{% static "css/index.css" %}">
 
 {% endblock css_files %} 
 
@@ -33,11 +33,10 @@
   <section>
     <h3 class="heading">Latest posts</h3>
     <div class="post">
-      
-      {% include "includes/post.html" %}
-      {% include "includes/post.html" %}
-      {% include "includes/post.html" %}
-      
+      {% for post in latest_post %}
+         {% include "includes/post.html" %}  
+      {% endfor %}
+
     </div>
   </section>
 

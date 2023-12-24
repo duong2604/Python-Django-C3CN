@@ -1,16 +1,19 @@
 {% load static %}
 
 <div class="card" style="width: 18rem">
-    <img
-      src="{% static 'images/post-1.jpg' %}"
+   <a href="{% url 'post_detail' {{ post.slug  %}">
+       <img
+      src="{% static "images/post-1.jpg" } %}"
       class="card-img-top"
       alt="..."
     />
+   </a>
   <div class="card-body">
-    <h5 class="card-title">Traveling on the world</h5>
+    
+    <h5 class="card-title">{{ post.title }}</h5>
+    <i> by {{ post.author}}</i>
     <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+     {{ post.content }}
     </p>
     <a href="#" class="btn btn-primary">Explore</a>
   </div>

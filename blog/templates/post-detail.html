@@ -1,8 +1,9 @@
 {% extends "base.html" %}
- 
-{% load static %} 
- 
-{% block title %} My blog  {% endblock title %} 
+
+{% load static %}
+
+{% block title %} My blog {% endblock title %} 
+
 
 {% block css_files %}
 <link
@@ -16,10 +17,12 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
   crossorigin="anonymous"
 ></script>
-<link ref="stylesheet" href="{% static "css/index.css" %}"
- {% endblock css_files%} 
- 
- {% block content %}
+
+
+
+{% endblock css_files%} 
+
+{% block content %}
 
 <main class="">
   <header>{% include "includes/header.html" %}</header>
@@ -30,5 +33,11 @@
     <button class="btn">Explore</button>
   </div>
 
-  <h2>post detail</h2>
+  <h2>
+    <ul>
+      <li>{{ slug }}</li>
+    </ul>
+  </h2>
 </main>
+
+{% endblock %}
