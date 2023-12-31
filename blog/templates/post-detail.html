@@ -25,19 +25,18 @@
 {% block content %}
 
 <main class="">
-  <header>{% include "includes/header.html" %}</header>
-
-  <div class="banner">
-    <h2 class="heading">Danny'Blog</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti.</p>
-    <button class="btn">Explore</button>
-  </div>
-
-  <h2>
+  <h2>Post Detail</h2>
     <ul>
-      <li>{{ slug }}</li>
+      <li>{{ post.title }}</li>
+      <li>{{ post.author }}</li>
+      <li>{{ post.content }}</li>
+      <li>{{ post.date|date:"D M Y" }}</li>
+      <li>
+        <img src="{% static 'images/'|add:post.image %}"/>
+      </li>
+      
+      
     </ul>
-  </h2>
 </main>
 
 {% endblock %}

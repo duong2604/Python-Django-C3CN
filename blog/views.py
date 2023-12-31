@@ -78,8 +78,9 @@ def post_detail(request, slug):
     # Tìm bài post có slug === slug(truyền vào)
     # Trả ra bai post render vè giao diện
 
-    post = [post for post in posts if post['slug'] == slug]
+    # post = [post for post in posts if post['slug'] == slug]
+    identified_post = next(post for post in posts if post['slug'] == slug)
 
     return render(request, "post-detail.html", {
-        "slug": slug
+        "post": identified_post
     })
